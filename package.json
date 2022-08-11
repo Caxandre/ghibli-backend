@@ -5,6 +5,12 @@
   "repository": "git@github.com:Caxandre/ghibli-backend.git",
   "author": "Carlos Perrout <carlosperrout@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
+    "start": "ts-node src/index.ts",
+    "test": "jest --runInBand --verbose=true"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
