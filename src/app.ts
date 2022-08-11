@@ -14,6 +14,14 @@ app.use(helmet());
 app.use(express.json());
 app.use(cors());
 
+app.get('/', (request: Request, response: Response) => {
+  response.status(200).send({
+    uptime: process.uptime(),
+    message: 'OK',
+    timestamp: Date.now()
+  });
+});
+
 app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
   if (err instanceof AppError) {
     return response.status(err.statusCode).json({
